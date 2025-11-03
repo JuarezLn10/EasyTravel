@@ -12,12 +12,18 @@ class DestinationCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: BorderRadiusGeometry.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
-            child: Image.network(
-              destination.posterPath,
-              height: 200,
-              width: double.infinity,
-              fit: BoxFit.cover,
+            borderRadius: BorderRadiusGeometry.only(
+              topLeft: Radius.circular(8),
+              topRight: Radius.circular(8),
+            ),
+            child: Hero(
+              tag: destination.id,
+              child: Image.network(
+                destination.posterPath,
+                height: 200,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Padding(
@@ -26,15 +32,13 @@ class DestinationCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  destination.title, 
+                  destination.title,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  destination.overview
-                ),
+                Text(destination.overview, maxLines: 1,),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

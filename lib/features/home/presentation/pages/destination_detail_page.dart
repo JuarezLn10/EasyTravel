@@ -1,3 +1,4 @@
+
 import 'package:easy_travel/features/home/domain/destination.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class DestinationDetailPage extends StatelessWidget {
               width: double.infinity,
               fit: BoxFit.cover,
             ),
-          )
+          ),
         ],
       ),
     );

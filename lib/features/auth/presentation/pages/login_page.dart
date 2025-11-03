@@ -10,7 +10,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _isHidden = true;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
           child: TextField(
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              hintText: "Email",
+              hintText: 'Email',
             ),
             keyboardType: TextInputType.emailAddress,
           ),
@@ -31,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
           child: TextField(
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              hintText: "Password",
+              hintText: 'Password',
               suffixIcon: IconButton(
                 onPressed: () {
                   setState(() {
@@ -56,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                   MaterialPageRoute(builder: (context) => MainPage()),
                 );
               },
-              child: Text("Sign in"),
+              child: Text('Sign in'),
             ),
           ),
         ),
