@@ -16,14 +16,33 @@ class DestinationCard extends StatelessWidget {
               topLeft: Radius.circular(8),
               topRight: Radius.circular(8),
             ),
-            child: Hero(
-              tag: destination.id,
-              child: Image.network(
-                destination.posterPath,
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
+            child: Stack(
+              alignment: AlignmentGeometry.topRight,
+              children: [
+                Hero(
+                tag: destination.id,
+                child: Image.network(
+                  destination.posterPath,
+                  height: 200,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                )),
+                Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: ClipOval(
+                    child: Container(
+                      color: Theme.of(context).colorScheme.secondary,
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.favorite_border,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {},
+                    )
+                  ),
+                )
+                )
+              ]
             ),
           ),
           Padding(
