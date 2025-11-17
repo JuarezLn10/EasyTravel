@@ -6,6 +6,7 @@ import 'package:easy_travel/features/favorites/presentation/blocs/favorites_bloc
 import 'package:easy_travel/features/favorites/presentation/blocs/favorites_event.dart';
 import 'package:easy_travel/features/home/data/destination_dao.dart';
 import 'package:easy_travel/features/home/data/destination_service.dart';
+import 'package:easy_travel/features/home/data/destination_repository_impl.dart';
 import 'package:easy_travel/features/home/domain/category.dart';
 import 'package:easy_travel/features/home/presentation/blocs/home_bloc.dart';
 import 'package:easy_travel/features/home/presentation/blocs/home_event.dart';
@@ -26,7 +27,10 @@ class MainApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
-            HomeBloc(service: DestinationService(), dao: DestinationDao())
+            HomeBloc(repository: DestinationRepositoryImpl(
+              dao: DestinationDao(),
+              service: DestinationService(),
+            ))
               ..add(GetDestinationsByCategory(category: CategoryType.all)),
         ),
         BlocProvider(
