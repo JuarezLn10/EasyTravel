@@ -8,8 +8,14 @@ class GetReviews extends ReviewEvent {
   const GetReviews({required this.destinationId});
 }
 
-class AddReview extends ReviewEvent {
-  final String token;
+class SubmitReview extends ReviewEvent {
+  final int destinationId;
+  final String comment;
+  final int rating;
 
-  const AddReview({required this.token});
+  const SubmitReview({
+    required this.destinationId,
+    required this.comment,
+    required this.rating,
+  });
 }
